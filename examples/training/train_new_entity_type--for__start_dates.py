@@ -46,7 +46,7 @@ from spacy.util import minibatch, compounding
 #  previous value by the compound rate
 
 # new entity label
-LABEL = "MAMMAL"
+LABEL = "START_DATE"
 
 # training data
 # Note: If you're using an existing model, make sure to mix in examples of
@@ -58,17 +58,26 @@ TRAIN_DATA = [
         "Horses are too tall and they pretend to care about your feelings",
         {"entities": [(0, 6, LABEL)]},
     ),
-    ("Do they bite?", {"entities": []}),
+    (
+        "Do they bite?", 
+        {"entities": []}
+    ),
     (
         "horses are too tall and they pretend to care about your feelings",
         {"entities": [(0, 6, LABEL)]},
     ),
-    ("horses pretend to care about your feelings", {"entities": [(0, 6, LABEL)]}),
+    (
+        "horses pretend to care about your feelings", 
+        {"entities": [(0, 6, LABEL)]}
+    ),
     (
         "they pretend to care about your feelings, those horses",
         {"entities": [(48, 54, LABEL)]},
     ),
-    ("horses?", {"entities": [(0, 6, LABEL)]}),
+    (
+        "horses?", 
+        {"entities": [(0, 6, LABEL)]}
+    ),
 ]
 
 
