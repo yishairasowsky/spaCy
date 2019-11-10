@@ -32,15 +32,21 @@ directive to the compiler that a particular module should be compiled
 using syntax or semantics that will be available 
 in a specified future release of Python
 """
-import plac
-import random
-from pathlib import Path
-import spacy
-from spacy.util import minibatch, compounding
+import plac # command line arguments parser
+import random # contains a variety of things to do with random number generation
 
+from pathlib import Path # intuitive method to interact with the filesystem
+# Path is used to examine, locate, and manipulate files
+
+import spacy # process and “understand” large volumes of text
+
+from spacy.util import minibatch, compounding 
+# 'minibatch' iterates over batches of items
+# in 'compounding' a new value is produced by multiplying the
+#  previous value by the compound rate
 
 # new entity label
-LABEL = "ANIMAL"
+LABEL = "MAMMAL"
 
 # training data
 # Note: If you're using an existing model, make sure to mix in examples of
