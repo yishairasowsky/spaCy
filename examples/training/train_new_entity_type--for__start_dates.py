@@ -26,8 +26,12 @@ For more details, see the documentation:
 Compatible with: spaCy v2.1.0+
 Last tested with: v2.1.0
 """
-from __future__ import unicode_literals, print_function
-
+from __future__ import unicode_literals, print_function 
+"""
+directive to the compiler that a particular module should be compiled 
+using syntax or semantics that will be available 
+in a specified future release of Python
+"""
 import plac
 import random
 from pathlib import Path
