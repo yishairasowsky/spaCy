@@ -101,7 +101,8 @@ def main(model=None, new_model_name="end_date", output_dir=None, n_iter=30):
     if "ner" not in nlp.pipe_names:
         ner = nlp.create_pipe("ner")
         nlp.add_pipe(ner)
-    # otherwise, get it, so we can add labels to it
+    # otherwise, i.e. "ner" is in fact in the pipeline, 
+    # then get it, so we can add labels to it
     else:
         ner = nlp.get_pipe("ner")
 
@@ -112,14 +113,16 @@ def main(model=None, new_model_name="end_date", output_dir=None, n_iter=30):
         optimizer = nlp.begin_training()
     else:
         optimizer = nlp.resume_training()
-    move_names = list(ner.move_names)
+    move_names = list(ner.move_names) # not sure what this does...
     # get names of other pipes to disable them during training
+    # i am not sure what the "pipes" are...
     other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
     with nlp.disable_pipes(*other_pipes):  # only train NER
         sizes = compounding(1.0, 4.0, 1.001)
         # batch up the examples using spaCy's minibatch
-        for itn in range(n_iter):
-            random.shuffle(TRAIN_DATA)
+        for itn in range(n_iter): # for each iteration
+            random.shuffle(TRAIN_DATA) 
+            # process your training examples in batches
             batches = minibatch(TRAIN_DATA, size=sizes)
             losses = {}
             for batch in batches:
@@ -128,7 +131,7 @@ def main(model=None, new_model_name="end_date", output_dir=None, n_iter=30):
             print("Losses", losses)
 
     # test the trained model
-    test_text = "Do you like horses?"
+    test_text = "the contract continues until it finishes on June 6, 2019"
     doc = nlp(test_text)
     print("Entities in '%s'" % test_text)
     for ent in doc.ents:
