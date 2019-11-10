@@ -46,7 +46,7 @@ from spacy.util import minibatch, compounding
 #  previous value by the compound rate
 
 # new entity label
-LABEL = "START_DATE"
+LABEL = "TERMINATION_DATE"
 
 # training data
 # Note: If you're using an existing model, make sure to mix in examples of
@@ -55,28 +55,28 @@ LABEL = "START_DATE"
 # https://explosion.ai/blog/pseudo-rehearsal-catastrophic-forgetting
 TRAIN_DATA = [
     (
-        "Horses are too tall and they pretend to care about your feelings",
-        {"entities": [(0, 6, LABEL)]},
+        "parties terminate the of January 14, 2011",
+        {"entities": [(25, 41, LABEL)]},
     ),
     (
-        "Do they bite?", 
+        "consideration of the agreements hereinafter set forth", 
         {"entities": []}
     ),
     (
-        "horses are too tall and they pretend to care about your feelings",
-        {"entities": [(0, 6, LABEL)]},
+        "and that it is terminated on January 31, 2012",
+        {"entities": [(29, 45, LABEL)]},
     ),
     (
-        "horses pretend to care about your feelings", 
-        {"entities": [(0, 6, LABEL)]}
+        "and it will be expiring on January 31, 2017", 
+        {"entities": [(27, 43, LABEL)]}
     ),
     (
-        "they pretend to care about your feelings, those horses",
-        {"entities": [(48, 54, LABEL)]},
+        "and end on January 31, 2018, with the successive optional",
+        {"entities": [(11, 27, LABEL)]},
     ),
     (
-        "horses?", 
-        {"entities": [(0, 6, LABEL)]}
+        "and ending January 31, 2019, and", 
+        {"entities": [(11, 27, LABEL)]}
     ),
 ]
 
