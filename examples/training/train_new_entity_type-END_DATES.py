@@ -113,7 +113,24 @@ TRAIN_DATA = [
 ('the starting will be on Jan 4, 2019 and the stopping will be on June 14, 2034', 
 {'entities': [(24, 35, 'START_DATE'), (64, 77, 'END_DATE')]}),
 ('the starting will be on Jan 4, 2019 and the termination will be on June 14, 2034', 
-{'entities': [(24, 35, 'START_DATE'), (67, 80, 'END_DATE')]})
+{'entities': [(24, 35, 'START_DATE'), (67, 80, 'END_DATE')]}),
+# no add false positive examples labeled as no entity found
+('Google bought SMRTflow for $9 billion', 
+{'entities': [(0, 6, 'ORG'), (14, 22, 'ORG'), (27, 37, 'MONEY')]}),
+('United States is against the PLO according to Fox News', 
+{'entities': [(0, 13, 'GPE'), (29, 32, 'ORG'), (46, 54, 'ORG')]}),
+('Amazon has a new GUI for Tony Blair in Harvard University Press', 
+{'entities': [(0, 6, 'ORG'), (17, 20, 'ORG'), (25, 35, 'PERSON'), (39, 63, 'ORG')]}),
+('what is the Prime Minister doing on a Wednesday in Africa?', 
+{'entities': [(38, 47, 'DATE'), (51, 57, 'LOC')]}),
+('Netanyahu declares war on terror in the Arutz Sheva broadcast', 
+{'entities': [(0, 9, 'PERSON')]}),
+('you live on 345 Main Street', 
+{'entities': [(12, 15, 'CARDINAL')]}),
+('this Landlord is helping the Tenant all the time', 
+{'entities': [(5, 13, 'PERSON'), (29, 35, 'PERSON')]}),
+('the State University of New York called Bank of America for a CPA because of the IRS audit', 
+{'entities': [(0, 32, 'ORG'), (40, 55, 'ORG'), (81, 84, 'ORG')]})
 ]
 
 @plac.annotations(
@@ -163,7 +180,22 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
             print("Losses", losses)
 
     # ********** test the trained model *************
-    test_text = "this lease will begin on Jan 1, 2000 and end on Dec 31, 2003"
+    # test_text = "this lease will begin on Jan 1, 2000 and end on Dec 31, 2003"
+    test_text = """
+
+                THIS COMMERCIAL LEASE AGREEMENT is made and entered into effective 
+
+                February 1, 2012, by and between FRONTAGE ROAD COMMERCIAL PROPERTIES, LLC, 
+
+                with mailing address of 607 Triple Tree Road, Bozeman, Montana, 59715, hereinafter 
+
+                referred to as “Landlord,” and MSU Extension, Housing & Environmental Health 
+
+                Program, a division of Montana State University, a state institution of higher education, 
+
+                hereinafter referred to as “Tenant.” 
+
+                """
     doc = nlp(test_text)
     print()
     print("Entities in '%s'" % test_text)
