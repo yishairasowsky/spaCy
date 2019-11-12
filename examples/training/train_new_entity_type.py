@@ -44,23 +44,18 @@ LABEL = "ANIMAL"
 # model might learn the new type, but "forget" what it previously knew.
 # https://explosion.ai/blog/pseudo-rehearsal-catastrophic-forgetting
 TRAIN_DATA = [
-    (
-        "Horses are too tall and they pretend to care about your feelings",
-        {"entities": [(0, 6, LABEL)]},
-    ),
+    ("Horses are too tall and they pretend to care about your feelings",
+        {"entities": [(0, 6, LABEL)]},),
     ("Do they bite?", {"entities": []}),
-    (
-        "horses are too tall and they pretend to care about your feelings",
-        {"entities": [(0, 6, LABEL)]},
-    ),
-    ("horses pretend to care about your feelings", {"entities": [(0, 6, LABEL)]}),
-    (
-        "they pretend to care about your feelings, those horses",
-        {"entities": [(48, 54, LABEL)]},
-    ),
-    ("horses?", {"entities": [(0, 6, LABEL)]}),
-]
-
+    ("horses are too tall and they pretend to care about your feelings",
+        {"entities": [(0, 6, LABEL)]},),
+    ("horses pretend to care about your feelings", 
+        {"entities": [(0, 6, LABEL)]}),
+    ("they pretend to care about your feelings, those horses",
+        {"entities": [(48, 54, LABEL)]},),
+    ("horses?", 
+        {"entities": [(0, 6, LABEL)]}),
+    ]
 
 @plac.annotations(
     model=("Model name. Defaults to blank 'en' model.", "option", "m", str),
@@ -74,7 +69,7 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
     if model is not None:
         nlp = spacy.load(model)  # load existing spaCy model
         print("Loaded model '%s'" % model)
-    else:
+    else: # no model was selected, so by default, use "en"
         nlp = spacy.blank("en")  # create blank Language class
         print("Created blank 'en' model")
     # Add entity recognizer to model if it's not in the pipeline
@@ -87,8 +82,7 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
         ner = nlp.get_pipe("ner")
 
     ner.add_label(LABEL)  # add new entity label to entity recognizer
-    # Adding extraneous labels shouldn't mess anything up
-    ner.add_label("VEGETABLE")
+    ner.add_label("VEGETABLE") # Adding extraneous labels shouldn't mess anything up
     if model is None:
         optimizer = nlp.begin_training()
     else:
@@ -108,9 +102,10 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
                 nlp.update(texts, annotations, sgd=optimizer, drop=0.35, losses=losses)
             print("Losses", losses)
 
-    # test the trained model
+    # ********** test the trained model *************
     test_text = "Do you like horses?"
     doc = nlp(test_text)
+    print()
     print("Entities in '%s'" % test_text)
     for ent in doc.ents:
         print(ent.label_, ent.text)
