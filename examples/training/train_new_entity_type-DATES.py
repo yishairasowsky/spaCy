@@ -197,7 +197,7 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
     test_text = "this lease will end on Jan 1, 2010 and begin on Dec 31, 2003"
     
     test_text = """
-                THIS COMMERCIAL LEASE AGREEMENT is made and entered into effective 
+                THIS COMMERCIAL LEASE AGREEMENT is made and entered into effective starting
                 February 1, 2012 until January 31, 2013, by and between FRONTAGE ROAD COMMERCIAL PROPERTIES, LLC, 
                 with mailing address of 607 Triple Tree Road, Bozeman, Montana, 59715, hereinafter 
                 referred to as “Landlord,” and MSU Extension, Housing & Environmental Health 
