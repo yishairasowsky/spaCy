@@ -26,24 +26,24 @@ For more details, see the documentation:
 Compatible with: spaCy v2.1.0+
 Last tested with: v2.1.0
 """
-from __future__ import unicode_literals, print_function 
-"""
-directive to the compiler that a particular module should be compiled 
-using syntax or semantics that will be available 
-in a specified future release of Python
-"""
-import plac # command line arguments parser
-import random # contains a variety of things to do with random number generation
 
-from pathlib import Path # intuitive method to interact with the filesystem
+# directive to the compiler that a particular module should be compiled 
+# using syntax or semantics that will be available 
+# in a specified future release of Python
+from __future__ import unicode_literals, print_function 
+
+import plac # command line arguments parser
+import random # random number generation
+
 # Path is used to examine, locate, and manipulate files
+from pathlib import Path 
 
 import spacy # process and “understand” large volumes of text
 
 from spacy.util import minibatch, compounding 
 # 'minibatch' iterates over batches of items
 # in 'compounding' a new value is produced by multiplying the
-#  previous value by the compound rate
+# previous value by the compound rate
 
 # new entity label
 LABEL = "END_DATE"
