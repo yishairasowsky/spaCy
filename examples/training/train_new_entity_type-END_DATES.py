@@ -159,6 +159,13 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
 
     ner.add_label(START_LABEL)  # add new entity label to entity recognizer
     ner.add_label(END_LABEL)  # add new entity label to entity recognizer
+    ner.add_label("ORG") # Adding extraneous labels shouldn't mess anything up
+    ner.add_label("MONEY") # Adding extraneous labels shouldn't mess anything up
+    ner.add_label("GPE") # Adding extraneous labels shouldn't mess anything up
+    ner.add_label("PERSON") # Adding extraneous labels shouldn't mess anything up
+    ner.add_label("DATE") # Adding extraneous labels shouldn't mess anything up
+    ner.add_label("LOC") # Adding extraneous labels shouldn't mess anything up
+    ner.add_label("CARDINAL") # Adding extraneous labels shouldn't mess anything up
     ner.add_label("VEGETABLE") # Adding extraneous labels shouldn't mess anything up
     if model is None:
         optimizer = nlp.begin_training()
