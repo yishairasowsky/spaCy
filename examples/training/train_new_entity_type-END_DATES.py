@@ -61,59 +61,59 @@ END_LABEL = "END_DATE"
 
 TRAIN_DATA = [
 ('the beginning will be on Jan 4, 2019 and the cessation will be on June 14, 2034', 
-{'entities': [(25, 36, 'START_LABEL'), (66, 79, 'END_LABEL')]}),
+{'entities': [(25, 36, 'START_DATE'), (66, 79, 'END_DATE')]}),
 ('the beginning will be on Jan 4, 2019 and the closure will be on June 14, 2034', 
-{'entities': [(25, 36, 'START_LABEL'), (64, 77, 'END_LABEL')]}),
+{'entities': [(25, 36, 'START_DATE'), (64, 77, 'END_DATE')]}),
 ('the beginning will be on Jan 4, 2019 and the conclusion will be on June 14, 2034', 
-{'entities': [(25, 36, 'START_LABEL'), (67, 80, 'END_LABEL')]}),
+{'entities': [(25, 36, 'START_DATE'), (67, 80, 'END_DATE')]}),
 ('the beginning will be on Jan 4, 2019 and the completion will be on June 14, 2034', 
-{'entities': [(25, 36, 'START_LABEL'), (67, 80, 'END_LABEL')]}),
+{'entities': [(25, 36, 'START_DATE'), (67, 80, 'END_DATE')]}),
 ('the beginning will be on Jan 4, 2019 and the ending will be on June 14, 2034', 
-{'entities': [(25, 36, 'START_LABEL'), (63, 76, 'END_LABEL')]}),
+{'entities': [(25, 36, 'START_DATE'), (63, 76, 'END_DATE')]}),
 ('the beginning will be on Jan 4, 2019 and the expiration will be on June 14, 2034', 
-{'entities': [(25, 36, 'START_LABEL'), (67, 80, 'END_LABEL')]}),
+{'entities': [(25, 36, 'START_DATE'), (67, 80, 'END_DATE')]}),
 ('the beginning will be on Jan 4, 2019 and the finish will be on June 14, 2034', 
-{'entities': [(25, 36, 'START_LABEL'), (63, 76, 'END_LABEL')]}),
+{'entities': [(25, 36, 'START_DATE'), (63, 76, 'END_DATE')]}),
 ('the beginning will be on Jan 4, 2019 and the stopping will be on June 14, 2034', 
-{'entities': [(25, 36, 'START_LABEL'), (65, 78, 'END_LABEL')]}),
+{'entities': [(25, 36, 'START_DATE'), (65, 78, 'END_DATE')]}),
 ('the beginning will be on Jan 4, 2019 and the termination will be on June 14, 2034', 
-{'entities': [(25, 36, 'START_LABEL'), (68, 81, 'END_LABEL')]}),
+{'entities': [(25, 36, 'START_DATE'), (68, 81, 'END_DATE')]}),
 ('the commencement will be on Jan 4, 2019 and the cessation will be on June 14, 2034', 
-{'entities': [(28, 39, 'START_LABEL'), (69, 82, 'END_LABEL')]}),
+{'entities': [(28, 39, 'START_DATE'), (69, 82, 'END_DATE')]}),
 ('the commencement will be on Jan 4, 2019 and the closure will be on June 14, 2034', 
-{'entities': [(28, 39, 'START_LABEL'), (67, 80, 'END_LABEL')]}),
+{'entities': [(28, 39, 'START_DATE'), (67, 80, 'END_DATE')]}),
 ('the commencement will be on Jan 4, 2019 and the conclusion will be on June 14, 2034', 
-{'entities': [(28, 39, 'START_LABEL'), (70, 83, 'END_LABEL')]}),
+{'entities': [(28, 39, 'START_DATE'), (70, 83, 'END_DATE')]}),
 ('the commencement will be on Jan 4, 2019 and the completion will be on June 14, 2034', 
-{'entities': [(28, 39, 'START_LABEL'), (70, 83, 'END_LABEL')]}),
+{'entities': [(28, 39, 'START_DATE'), (70, 83, 'END_DATE')]}),
 ('the commencement will be on Jan 4, 2019 and the ending will be on June 14, 2034', 
-{'entities': [(28, 39, 'START_LABEL'), (66, 79, 'END_LABEL')]}),
+{'entities': [(28, 39, 'START_DATE'), (66, 79, 'END_DATE')]}),
 ('the commencement will be on Jan 4, 2019 and the expiration will be on June 14, 2034', 
-{'entities': [(28, 39, 'START_LABEL'), (70, 83, 'END_LABEL')]}),
+{'entities': [(28, 39, 'START_DATE'), (70, 83, 'END_DATE')]}),
 ('the commencement will be on Jan 4, 2019 and the finish will be on June 14, 2034', 
-{'entities': [(28, 39, 'START_LABEL'), (66, 79, 'END_LABEL')]}),
+{'entities': [(28, 39, 'START_DATE'), (66, 79, 'END_DATE')]}),
 ('the commencement will be on Jan 4, 2019 and the stopping will be on June 14, 2034', 
-{'entities': [(28, 39, 'START_LABEL'), (68, 81, 'END_LABEL')]}),
+{'entities': [(28, 39, 'START_DATE'), (68, 81, 'END_DATE')]}),
 ('the commencement will be on Jan 4, 2019 and the termination will be on June 14, 2034', 
-{'entities': [(28, 39, 'START_LABEL'), (71, 84, 'END_LABEL')]}),
+{'entities': [(28, 39, 'START_DATE'), (71, 84, 'END_DATE')]}),
 ('the starting will be on Jan 4, 2019 and the cessation will be on June 14, 2034', 
-{'entities': [(24, 35, 'START_LABEL'), (65, 78, 'END_LABEL')]}),
+{'entities': [(24, 35, 'START_DATE'), (65, 78, 'END_DATE')]}),
 ('the starting will be on Jan 4, 2019 and the closure will be on June 14, 2034', 
-{'entities': [(24, 35, 'START_LABEL'), (63, 76, 'END_LABEL')]}),
+{'entities': [(24, 35, 'START_DATE'), (63, 76, 'END_DATE')]}),
 ('the starting will be on Jan 4, 2019 and the conclusion will be on June 14, 2034', 
-{'entities': [(24, 35, 'START_LABEL'), (66, 79, 'END_LABEL')]}),
+{'entities': [(24, 35, 'START_DATE'), (66, 79, 'END_DATE')]}),
 ('the starting will be on Jan 4, 2019 and the completion will be on June 14, 2034', 
-{'entities': [(24, 35, 'START_LABEL'), (66, 79, 'END_LABEL')]}),
+{'entities': [(24, 35, 'START_DATE'), (66, 79, 'END_DATE')]}),
 ('the starting will be on Jan 4, 2019 and the ending will be on June 14, 2034', 
-{'entities': [(24, 35, 'START_LABEL'), (62, 75, 'END_LABEL')]}),
+{'entities': [(24, 35, 'START_DATE'), (62, 75, 'END_DATE')]}),
 ('the starting will be on Jan 4, 2019 and the expiration will be on June 14, 2034', 
-{'entities': [(24, 35, 'START_LABEL'), (66, 79, 'END_LABEL')]}),
+{'entities': [(24, 35, 'START_DATE'), (66, 79, 'END_DATE')]}),
 ('the starting will be on Jan 4, 2019 and the finish will be on June 14, 2034', 
-{'entities': [(24, 35, 'START_LABEL'), (62, 75, 'END_LABEL')]}),
+{'entities': [(24, 35, 'START_DATE'), (62, 75, 'END_DATE')]}),
 ('the starting will be on Jan 4, 2019 and the stopping will be on June 14, 2034', 
-{'entities': [(24, 35, 'START_LABEL'), (64, 77, 'END_LABEL')]}),
+{'entities': [(24, 35, 'START_DATE'), (64, 77, 'END_DATE')]}),
 ('the starting will be on Jan 4, 2019 and the termination will be on June 14, 2034', 
-{'entities': [(24, 35, 'START_LABEL'), (67, 80, 'END_LABEL')]})
+{'entities': [(24, 35, 'START_DATE'), (67, 80, 'END_DATE')]})
 ]
 
 @plac.annotations(
@@ -140,8 +140,8 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
     else:
         ner = nlp.get_pipe("ner")
 
-    ner.add_label(LABEL1)  # add new entity label to entity recognizer
-    ner.add_label(LABEL2)  # add new entity label to entity recognizer
+    ner.add_label(START_LABEL)  # add new entity label to entity recognizer
+    ner.add_label(END_LABEL)  # add new entity label to entity recognizer
     ner.add_label("VEGETABLE") # Adding extraneous labels shouldn't mess anything up
     if model is None:
         optimizer = nlp.begin_training()
