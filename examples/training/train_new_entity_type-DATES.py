@@ -193,15 +193,17 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
             print("Losses", losses)
 
     # ********** test the trained model *************
+    
     test_text = "this lease will end on Jan 1, 2010 and begin on Dec 31, 2003"
-    # test_text = """
-    #             THIS COMMERCIAL LEASE AGREEMENT is made and entered into effective 
-    #             February 1, 2012, by and between FRONTAGE ROAD COMMERCIAL PROPERTIES, LLC, 
-    #             with mailing address of 607 Triple Tree Road, Bozeman, Montana, 59715, hereinafter 
-    #             referred to as “Landlord,” and MSU Extension, Housing & Environmental Health 
-    #             Program, a division of Montana State University, a state institution of higher education, 
-    #             hereinafter referred to as “Tenant.” 
-    #             """
+    
+    test_text = """
+                THIS COMMERCIAL LEASE AGREEMENT is made and entered into effective 
+                February 1, 2012 until January 31, 2013, by and between FRONTAGE ROAD COMMERCIAL PROPERTIES, LLC, 
+                with mailing address of 607 Triple Tree Road, Bozeman, Montana, 59715, hereinafter 
+                referred to as “Landlord,” and MSU Extension, Housing & Environmental Health 
+                Program, a division of Montana State University, a state institution of higher education, 
+                hereinafter referred to as “Tenant.” 
+                """
     doc = nlp(test_text)
     print()
     print("Entities in '%s'" % test_text)
