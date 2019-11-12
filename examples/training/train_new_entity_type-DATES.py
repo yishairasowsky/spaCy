@@ -125,10 +125,16 @@ TRAIN_DATA = [
 {'entities': [(38, 47, 'DATE'), (51, 57, 'LOC')]}),
 ('Netanyahu declares war on terror in the Arutz Sheva broadcast', 
 {'entities': [(0, 9, 'PERSON')]}),
-('you live on 345 Main Street', 
-{'entities': [(12, 15, 'CARDINAL')]}),
+('you live on Main Street', 
+{'entities': [(12, 23, 'FAC')]}),
+('we are located on River Road', 
+{'entities': [(18, 28, 'FAC')]}),
+('you can find us at the office on Joshua Court', 
+{'entities': [(33, 45, 'ORG')]}),
 ('this Landlord is helping the Tenant all the time', 
 {'entities': [(5, 13, 'PERSON'), (29, 35, 'PERSON')]}),
+('the house is on Oak Tree Drive', 
+{'entities': []}),
 ('the State University of New York called Bank of America for a CPA because of the IRS audit', 
 {'entities': [(0, 32, 'ORG'), (40, 55, 'ORG'), (81, 84, 'ORG')]})
 ]
@@ -166,7 +172,7 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
     ner.add_label("DATE") # Adding extraneous labels shouldn't mess anything up
     ner.add_label("LOC") # Adding extraneous labels shouldn't mess anything up
     ner.add_label("CARDINAL") # Adding extraneous labels shouldn't mess anything up
-    ner.add_label("VEGETABLE") # Adding extraneous labels shouldn't mess anything up
+    ner.add_label("FAC") # Adding extraneous labels shouldn't mess anything up
     if model is None:
         optimizer = nlp.begin_training()
     else:
