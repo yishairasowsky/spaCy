@@ -36,26 +36,94 @@ from spacy.util import minibatch, compounding
 
 
 # new entity label
-LABEL = "ANIMAL"
+LABEL = "END_DATE"
 
 # training data
 # Note: If you're using an existing model, make sure to mix in examples of
 # other entity types that spaCy correctly recognized before. Otherwise, your
 # model might learn the new type, but "forget" what it previously knew.
 # https://explosion.ai/blog/pseudo-rehearsal-catastrophic-forgetting
+
+# TRAIN_DATA = [
+#     ("Horses are too tall and they pretend to care about your feelings",
+#         {"entities": [(0, 6, LABEL)]},),
+#     ("Do they bite?", {"entities": []}),
+#     ("horses are too tall and they pretend to care about your feelings",
+#         {"entities": [(0, 6, LABEL)]},),
+#     ("horses pretend to care about your feelings", 
+#         {"entities": [(0, 6, LABEL)]}),
+#     ("they pretend to care about your feelings, those horses",
+#         {"entities": [(48, 54, LABEL)]},),
+#     ("horses?", 
+#         {"entities": [(0, 6, LABEL)]}),
+#     ]
+
 TRAIN_DATA = [
-    ("Horses are too tall and they pretend to care about your feelings",
-        {"entities": [(0, 6, LABEL)]},),
-    ("Do they bite?", {"entities": []}),
-    ("horses are too tall and they pretend to care about your feelings",
-        {"entities": [(0, 6, LABEL)]},),
-    ("horses pretend to care about your feelings", 
-        {"entities": [(0, 6, LABEL)]}),
-    ("they pretend to care about your feelings, those horses",
-        {"entities": [(48, 54, LABEL)]},),
-    ("horses?", 
-        {"entities": [(0, 6, LABEL)]}),
-    ]
+    ('the beginning will be on Jan 4, 2019 and the cessation will be on June 14, 2034', 
+    {'entities': [(66, 79, LABEL)]}),
+    ('the beginning will be on Jan 4, 2019 and the closure will be on June 14, 2034', 
+    {'entities': [(64, 77, LABEL)]}),
+    ('the beginning will be on Jan 4, 2019 and the conclusion will be on June 14, 2034', 
+    {'entities': [(67, 80, LABEL)]}),
+    ('the beginning will be on Jan 4, 2019 and the completion will be on June 14, 2034', 
+    {'entities': [(67, 80, LABEL)]}),
+    ('the beginning will be on Jan 4, 2019 and the ending will be on June 14, 2034', 
+    {'entities': [(63, 76, LABEL)]}),
+    ('the beginning will be on Jan 4, 2019 and the expiration will be on June 14, 2034', 
+    {'entities': [(67, 80, LABEL)]}),
+    ('the beginning will be on Jan 4, 2019 and the finish will be on June 14, 2034', 
+    {'entities': [(63, 76, LABEL)]}),
+    ('the beginning will be on Jan 4, 2019 and the stopping will be on June 14, 2034', 
+    {'entities': [(65, 78, LABEL)]}),
+    ('the beginning will be on Jan 4, 2019 and the termination will be on June 14, 2034', 
+    {'entities': [(68, 81, LABEL)]}),
+    ('the commencement will be on Jan 4, 2019 and the cessation will be on June 14, 2034', 
+    {'entities': [(69, 82, LABEL)]}),
+    ('the commencement will be on Jan 4, 2019 and the closure will be on June 14, 2034', 
+    {'entities': [(67, 80, LABEL)]}),
+    ('the commencement will be on Jan 4, 2019 and the conclusion will be on June 14, 2034', 
+    {'entities': [(70, 83, LABEL)]}),
+    ('the commencement will be on Jan 4, 2019 and the completion will be on June 14, 2034', 
+    {'entities': [(70, 83, LABEL)]}),
+    ('the commencement will be on Jan 4, 2019 and the ending will be on June 14, 2034', 
+    {'entities': [(66, 79, LABEL)]}),
+    ('the commencement will be on Jan 4, 2019 and the expiration will be on June 14, 2034', 
+    {'entities': [(70, 83, LABEL)]}),
+    ('the commencement will be on Jan 4, 2019 and the finish will be on June 14, 2034', 
+    {'entities': [(66, 79, LABEL)]}),
+    ('the commencement will be on Jan 4, 2019 and the stopping will be on June 14, 2034', 
+    {'entities': [(68, 81, LABEL)]}),
+    ('the commencement will be on Jan 4, 2019 and the termination will be on June 14, 2034', 
+    {'entities': [(71, 84, LABEL)]}),
+    ('the inception will be on Jan 4, 2019 and the cessation will be on June 14, 2034', 
+    {'entities': [(66, 79, LABEL)]}),
+    ('the inception will be on Jan 4, 2019 and the closure will be on June 14, 2034', 
+    {'entities': [(64, 77, LABEL)]}),
+    ('the inception will be on Jan 4, 2019 and the conclusion will be on June 14, 2034', 
+    {'entities': [(67, 80, LABEL)]}),
+    ('the inception will be on Jan 4, 2019 and the completion will be on June 14, 2034', 
+    {'entities': [(67, 80, LABEL)]}),
+    ('the inception will be on Jan 4, 2019 and the ending will be on June 14, 2034', 
+    {'entities': [(63, 76, LABEL)]}),
+    ('the inception will be on Jan 4, 2019 and the expiration will be on June 14, 2034', 
+    {'entities': [(67, 80, LABEL)]}),
+    ('the inception will be on Jan 4, 2019 and the finish will be on June 14, 2034', 
+    {'entities': [(63, 76, LABEL)]}),
+    ('the inception will be on Jan 4, 2019 and the stopping will be on June 14, 2034', 
+    {'entities': [(65, 78, LABEL)]}),
+    ('the inception will be on Jan 4, 2019 and the termination will be on June 14, 2034', 
+    {'entities': [(68, 81, LABEL)]}),
+    ('the starting will be on Jan 4, 2019 and the ending will be on June 14, 2034', 
+    {'entities': [(62, 75, LABEL)]}),
+    ('the starting will be on Jan 4, 2019 and the expiration will be on June 14, 2034', 
+    {'entities': [(66, 79, LABEL)]}),
+    ('the starting will be on Jan 4, 2019 and the finish will be on June 14, 2034', 
+    {'entities': [(62, 75, LABEL)]}),
+    ('the starting will be on Jan 4, 2019 and the stopping will be on June 14, 2034', 
+    {'entities': [(64, 77, LABEL)]}),
+    ('the starting will be on Jan 4, 2019 and the termination will be on June 14, 2034', 
+    {'entities': [(67, 80, LABEL)]})
+]
 
 @plac.annotations(
     model=("Model name. Defaults to blank 'en' model.", "option", "m", str),
@@ -103,7 +171,7 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
             print("Losses", losses)
 
     # ********** test the trained model *************
-    test_text = "Do you like horses?"
+    test_text = "this lease will begin on Jan 1, 2000 and end on Dec 31, 2003"
     doc = nlp(test_text)
     print()
     print("Entities in '%s'" % test_text)
