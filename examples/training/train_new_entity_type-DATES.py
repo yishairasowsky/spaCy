@@ -194,7 +194,7 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
 
     # ********** test the trained model *************
     
-    test_text = "this lease will end on Jan 1, 2010 and begin on Dec 31, 2003"
+    # test_text = "this lease will end on Jan 1, 2010 and begin on Dec 31, 2003"
     
     test_text = """
                 THIS COMMERCIAL LEASE AGREEMENT is made and entered into effective starting
@@ -208,7 +208,8 @@ def main(model=None, new_model_name="animal", output_dir=None, n_iter=30):
     print()
     print("Entities in '%s'" % test_text)
     for ent in doc.ents:
-        print(ent.label_, ent.text)
+        if ent.label_ in ["START_DATE","END_DATE"]:
+            print(ent.label_, ent.text)
     print()
 
     # save model to output directory
