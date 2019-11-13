@@ -1,0 +1,1 @@
+{"id": 0, "paragraphs": [{"raw": "I like London", "sentences": [{"tokens": [{"id": 0, "orth": "I", "tag": "PRP", "head": 1, "dep": "nsubj", "ner": "O"}, {"id": 1, "orth": "like", "tag": "VBP", "head": 0, "dep": "ROOT", "ner": "O"}, {"id": 2, "orth": "London", "tag": "NNP", "head": -1, "dep": "pobj", "ner": "U-GPE"}], "brackets": []}], "cats": []}]}
