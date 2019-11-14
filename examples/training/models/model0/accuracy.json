@@ -1,0 +1,25 @@
+{
+  "uas":21.5,
+  "las":0.0,
+  "ents_p":0.0,
+  "ents_r":0.0,
+  "ents_f":0.0,
+  "ents_per_type":{
+    "DATE":{
+      "p":0.0,
+      "r":0.0,
+      "f":0.0
+    },
+    "PERSON":{
+      "p":0.0,
+      "r":0.0,
+      "f":0.0
+    }
+  },
+  "tags_acc":79.1946308725,
+  "token_acc":100.0,
+  "textcat_score":0.0,
+  "textcats_per_cat":{
+
+  }
+}

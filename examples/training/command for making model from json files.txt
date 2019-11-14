@@ -1,1 +1,1 @@
-python -m spacy train en models train.json validation.json
+python -m spacy train en models json/real_data.json json/validation.json
